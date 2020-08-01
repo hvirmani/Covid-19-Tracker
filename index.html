@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- mlh devfolio hackerearth-->
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#side {
+			width: 0;
+			height: 100%;
+			z-index: 0;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+
+		#main {
+			background: lightgreen;
+			height: 100vh;
+			overflow-x: hidden;
+			width: 100%;
+		}
+		button {
+			width: 100px;
+			
+		}
+		#fix{
+			position: absolute;
+			top: 10px;
+			left: 0;
+		}
+		#b{
+			position: relative;
+			margin-left: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="side">
+
+	</div>
+	<div id="main">
+		<button onclick="openNav();" id="fix">+</button>
+		<button onclick="closeNav();" id="b">-</button>
+	</div>
+	<script>
+		function openNav() {
+			document.getElementById("side").style.width = "250px";
+			document.getElementById("main").style.marginLeft = "250px";
+		}
+
+		function closeNav() {
+			document.getElementById("side").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+		}
+	</script>
+</body>
+
+</html>
