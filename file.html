@@ -3,23 +3,46 @@
 
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script>
+		
+		function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+	</script>
 	<style>
 		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
 		}
-
+		ul{
+			padding: 15% 0.2%;
+		}
 		body {
 			background: #121212;
 		}
 
 		.main {
-			width: 85%;
+
 			background: #121212;
 			margin: auto;
-			padding: 2%;
+			padding: 1%;
 		}
 
-		.graph div div {
+		.graph div {
 			margin: 2% 0%;
+		}
+
+		.graph {
+			width: 90%;
+			margin: auto;
 		}
 
 		#clearfix {
@@ -27,9 +50,43 @@
 			clear: both;
 		}
 
-		#recoveries_graph,
-		#cases_graph {
+		.head {
+			color: red;
+			background: #121212;
+			text-align: center;
+			margin-bottom: 50px;
+			padding: 0;
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+		#cases_graph,
+		#recovery_piechart,
+		#fatality_piechart {
 			margin: 50px;
+		}
+		li{
+			font-size: 20px;
+			color: gray;
+			text-align: justify;
+			margin:40px 5px;
+			margin-top: 0;
+			list-style: none;
+		}
+		li:nth-last-child(1){
+			
+		}
+		#state{
+			color: orangered;
+			font-size:30px;
+		}
+		#death{
+			color:goldenrod;
+			font-size:25px;
+		}
+		#recovered{
+			color:#673ab7;
+			font-size:25px;
 		}
 	</style>
 	<title>Document</title>
@@ -52,25 +109,35 @@
 			]);
 
 			var options = {
-				 pieSliceTextStyle :{fontsize : 16, color: 'transparent'},
-        slices: {
-            0: { color: '#09b4ff'},
-            1: { color: '#444'}
-        },
-				title: 'Fatality-Rate',
-				pieHole:  0.70,
+				pieSliceTextStyle: {
+					fontsize: 16,
+					color: 'transparent'
+				},
+				slices: {
+					0: {
+						color: '#09b4ff'
+					},
+					1: {
+						color: '#444'
+					}
+				},
+				title: 'Recovery-Rate',
+				pieHole: 0.70,
 				colors: ['#3a4cb7', '#dde1e7'],
-				responsive: true, labels: false,
+				responsive: true,
+				labels: false,
 				backgroundColor: {
 					fill: '#1e1e1e'
 				},
 				titleTextStyle: {
 					color: '#188e82',
-					fontSize:20,
+					fontSize: 20,
 				},
 				legend: {
 					position: 'bottom',
-					textStyle: {color: 'white'}
+					textStyle: {
+						color: 'white'
+					}
 				},
 			};
 
@@ -83,6 +150,7 @@
 			packages: ["corechart"]
 		});
 		google.charts.setOnLoadCallback(drawChart);
+
 		function drawChart() {
 			var data = google.visualization.arrayToDataTable([
 				['Death', 'Active&Recovered', {
@@ -94,25 +162,35 @@
 			]);
 
 			var options = {
-				 pieSliceTextStyle :{fontsize : 16, color: 'transparent'},
-        slices: {
-            0: { color: 'orangered'},
-            1: { color: '#444'}
-        },
+				pieSliceTextStyle: {
+					fontsize: 16,
+					color: 'transparent'
+				},
+				slices: {
+					0: {
+						color: 'orangered'
+					},
+					1: {
+						color: '#444'
+					}
+				},
 				title: 'Fatality-Rate',
-				pieHole:  0.70,
+				pieHole: 0.70,
 				colors: ['#3a4cb7', '#dde1e7'],
-				responsive: true, labels: false,
+				responsive: true,
+				labels: false,
 				backgroundColor: {
 					fill: '#1e1e1e'
 				},
 				titleTextStyle: {
 					color: '#188e82',
-					fontSize:20,
+					fontSize: 20,
 				},
 				legend: {
 					position: 'bottom',
-					textStyle: {color: 'white'}
+					textStyle: {
+						color: 'white'
+					}
 				},
 			};
 
@@ -136,18 +214,18 @@
 				hAxis: {
 					textStyle: {
 						color: 'gray',
-						fontSize:12,
+						fontSize: 12,
 					}
 				},
 
 				titleTextStyle: {
 					color: '#188e82',
-					fontSize:20,
+					fontSize: 20,
 				},
 				vAxis: {
 					textStyle: {
 						color: 'gray',
-						fontSize:12,
+						fontSize: 12,
 					},
 					gridlines: {
 						color: 'transparent'
@@ -158,7 +236,9 @@
 				},
 				legend: {
 					position: 'bottom',
-					textStyle: {color: 'white'}
+					textStyle: {
+						color: 'white'
+					}
 				},
 				colors: ['#3a4cb7']
 			};
@@ -183,18 +263,18 @@
 				hAxis: {
 					textStyle: {
 						color: 'gray',
-						fontSize:12,
+						fontSize: 12,
 					}
 				},
 
 				titleTextStyle: {
 					color: '#188e82',
-					fontSize:20,
+					fontSize: 20,
 				},
 				vAxis: {
 					textStyle: {
 						color: 'gray',
-						fontSize:12,
+						fontSize: 12,
 					},
 					gridlines: {
 						color: 'transparent'
@@ -205,7 +285,9 @@
 				},
 				legend: {
 					position: 'bottom',
-					textStyle: {color: 'white'}
+					textStyle: {
+						color: 'white'
+					}
 				},
 				colors: ['orangered']
 			};
@@ -215,11 +297,123 @@
 			chart.draw(data, options);
 		}
 	</script>
+	<!--<script type="text/javascript">
+		google.charts.load("current", {
+			packages: ['corechart']
+		});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable(arr_2);
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				bar: {
+					groupWidth: "70%",
+				},
+				title: 'Daily Cases',
+				curveType: 'function',
+				hAxis: {
+					textStyle: {
+						color: 'gray',
+						fontSize: 12,
+					}
+				},
+
+				titleTextStyle: {
+					color: '#188e82',
+					fontSize: 20,
+				},
+				vAxis: {
+					textStyle: {
+						color: 'gray',
+						fontSize: 12,
+					},
+					gridlines: {
+						color: 'transparent'
+					}
+				},
+				backgroundColor: {
+					fill: '#1e1e1e'
+				},
+				legend: {
+					position: 'bottom',
+					textStyle: {
+						color: 'white'
+					}
+				},
+				colors: ['#ff0050']
+			};
+			var chart = new google.visualization.ColumnChart(document.getElementById("daily_cases"));
+			chart.draw(view, options);
+		}
+	</script>-->
+	<script type="text/javascript">
+		google.charts.load("current", {
+			packages: ['corechart']
+		});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable(arr_2);
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				bar: {
+					groupWidth: "70%",
+				},
+				title: 'Daily Cases',
+				curveType: 'function',
+				hAxis: {
+					textStyle: {
+						color: 'gray',
+						fontSize: 12,
+					}
+				},
+				width: '90%',
+				height: '400px',
+				titleTextStyle: {
+					color: '#188e82',
+					fontSize: 20,
+				},
+				vAxis: {
+					textStyle: {
+						color: 'gray',
+						fontSize: 12,
+					},
+					gridlines: {
+						color: 'transparent'
+					}
+				},
+				backgroundColor: {
+					fill: '#1e1e1e'
+				},
+				legend: {
+					position: 'bottom',
+					textStyle: {
+						color: 'white'
+					}
+				},
+				colors: ['#ff0050']
+			};
+			var chart = new google.visualization.ColumnChart(document.getElementById("daily_cases"));
+			chart.draw(view, options);
+		}
+		$(window).resize(function() {
+			drawChart();
+		});
+	</script>
 	<script>
 		var arr = [],
 			arr_1 = [],
+			arr_2 = [],
 			j = 0,
 			i = 0,
+			k,
 			a, b, c;
 
 		const url = "https://api.covid19india.org/data.json";
@@ -229,52 +423,80 @@
 			})
 			.then((data) => {
 				j = 0;
+				k = 0;
 				arr[0] = ['Date', 'Total Cases'];
 				arr_1[0] = ['Date', 'Recovered Cases'];
-				j =30;
+				arr_2[0] = ['Date', 'Daily Cases'];
+				j = 30;
+				k = 14;
 				for (i = data.cases_time_series.length - 1; j > 0; i--) {
 					var arr1 = [],
-						arr2 = [];
+						arr2 = [],
+						arr3 = [];
 					arr1[0] = data.cases_time_series[i].date;
 					arr2[0] = data.cases_time_series[i].date;
+					arr3[0] = data.cases_time_series[i].date;
 					arr1[1] = parseInt(data.cases_time_series[i].totalconfirmed);
 					arr2[1] = parseInt(data.cases_time_series[i].totalrecovered);
+					arr3[1] = parseInt(data.cases_time_series[i].dailyconfirmed);
 					arr[j] = arr1;
 					arr_1[j] = arr2;
+					if (k > 0) {
+						arr_2[k] = arr3;
+						k--;
+					}
+
 					j--;
 				}
-				console.log(arr);
-				console.log(data.cases_time_series[0]);
+				console.log(arr_2);
+				console.log(data.statewise);
 				//arr[0]['Work', 9];
 				a = data.statewise[0].recovered;
 				b = data.statewise[0].confirmed;
 				c = data.statewise[0].deaths;
-				document.getElementById("total_cases").innerHTML = b;
-				document.getElementById("total_recovered").innerHTML = a;
-				document.getElementById("total_deaths").innerHTML = c;
+				document.getElementById("total_cases").innerHTML = `<h4 style="font-size:35px;">${b}</h4><br><p>Infected</p>`;
+				document.getElementById("total_recovered").innerHTML = `<h4 style="font-size:35px;">${a}</h4><br><p>Recovered</p>`;
+				document.getElementById("total_deaths").innerHTML = `<h4 style="font-size:35px;">${c}</h4><br><p>Deaths</p>`;
+				for (i = 1; i < 38; i++) {
+					var element = document.createElement("li");
+					document.getElementById("list").appendChild(element);
+					element.innerHTML = `<li>${data.statewise[i].confirmed}<span id="state"> ${data.statewise[i].state}</span><br><span id="death"> Death: </span>${data.statewise[i].deaths}<br><span id="recovered">Recovered: </span>${data.statewise[i].recovered}</li>`;
+				}
+
 			})
 	</script>
 </head>
 
 <body>
-	<div class="head">
-		<h1>Coronavirus Tracker</h1>
+	<div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;width:360px; z-index:5" id="mySidebar"   id="leftMenu">
+		
+		<ul id="list" style="background: #1e1e1e;width: 350px;padding: 5%;overflow-x: hidden;text-overflow: ellipsis;">
+
+		</ul>
 	</div>
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
 	<div class="main">
+		<div class="head">
+			<button class="w3-button w3-xxlarge w3-left" style="background: #121212;" onclick="w3_open()" >&#9776;</button>
+			
+			<h1>Coronavirus Tracker</h1>
 
-		<div class="info">
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-				<div id="total_cases">
+		</div>
+		<div class="clearfix"></div>
+		<div class="info" style="color:#fff;">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				<div id="total_cases" style="width:90%;height:200px;padding:10%;margin:auto;text-align:center;font-size:25px;background:#1e1e1e;border-left:4px solid blue;">
 
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<div id="total_recovered">
+				<div id="total_recovered" style="width:90%;height:200px;padding:10%;margin:auto;text-align:center;font-size:25px;background:#1e1e1e;border-left:4px solid green;">
 
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<div id="total_deaths">
+				<div id="total_deaths" style="width:90%;height:200px;padding:10%;margin:auto;text-align:center;font-size:25px;background:#1e1e1e;border-left:4px solid red;">
 
 				</div>
 			</div>
@@ -283,40 +505,36 @@
 
 		</div>
 		<div class="graph">
-			<div class="a">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
-					<div id="recovery_piechart" style="width: 500px;height: 300px;margin: auto;">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div id="recovery_piechart" style="width:500px;height: 300px;margin:2% auto;">
 
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div id="fatality_piechart" style="width: 500px;height: 300px;margin: auto;">
-
-					</div>
 				</div>
 			</div>
-			<div class="b">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-<div id="cases_graph" style="width: 500px;height: 300px;margin: auto;">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div id="fatality_piechart" style="width:500px;height: 300px;margin:2% auto;">
 
-		</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div id="recoveries_graph" style="width: 500px;height: 300px;margin: auto;">
-
-					</div>
 				</div>
 			</div>
-			<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div id="cases_graph">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div id="cases_graph" style="width:500px;height: 300px;margin:2% auto;">
 
-		</div>
-			</div>-->
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div id="recoveries_graph" style="width:500px;height: 300px;margin:2% auto;">
+
+				</div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div id="daily_cases" style="width: 90%;min-width: 500px;height: 400px; margin:3% auto;">
+
+				</div>
+			</div>
 		</div>
 		<div id="clearfix">
 
 		</div>
-		
+
 	</div>
 </body>
 
