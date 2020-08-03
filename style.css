@@ -1,0 +1,72 @@
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			padding: 15% 0.2%;
+		}
+		body {
+			background: #121212;
+		}
+
+		.main {
+
+			background: #121212;
+			margin: auto;
+			padding: 1%;
+		}
+
+		.graph div {
+			margin: 2% 0%;
+		}
+
+		.graph {
+			width: 90%;
+			margin: auto;
+		}
+
+		#clearfix {
+			content: '';
+			clear: both;
+		}
+
+		.head {
+			color: red;
+			background: #121212;
+			text-align: center;
+			margin-bottom: 50px;
+			padding: 0;
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+		#cases_graph,
+		#recovery_piechart,
+		#fatality_piechart {
+			margin: 50px;
+		}
+		li{
+			font-size: 20px;
+			color: gray;
+			text-align: justify;
+			margin:40px 5px;
+			margin-top: 0;
+			list-style: none;
+		}
+		li:nth-last-child(1){
+			
+		}
+		#state{
+			color: orangered;
+			font-size:30px;
+		}
+		#death{
+			color:goldenrod;
+			font-size:25px;
+		}
+		#recovered{
+			color:#673ab7;
+			font-size:25px;
+		}
