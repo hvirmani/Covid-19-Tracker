@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="file.js"></script>
+	<style>
+		body {
+			background: #121212;
+			font-size: calc(1.5em + 0.1vw);
+			color: #fff;
+		}
+
+		#recovery,
+		#fatality,
+		#case,
+		#recover {
+			height: 300px;
+			margin: 5% 0;
+		}
+
+		#cases_data {
+			height: 400px;
+			margin: 5% 0;
+		}
+
+		.row {
+			margin: 0 2.5%;
+		}
+
+		.head {
+			text-align: center;
+			color: red;
+		}
+	</style>
+	<title></title>
+</head>
+
+<body>
+	<div class="main">
+		<div class="head">
+			<h1>Coronavirus Tracker</h1>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div id="total_cases" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid blue;">
+
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div id="total_recovered" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid green;">
+
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div id="total_deaths" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid red;">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="col-md-12" id="recovery">
+
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="col-md-12" id="fatality">
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="col-md-12" id="case">
+
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="col-md-12" id="recover">
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="col-md-12" id="cases_data">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
