@@ -9,6 +9,12 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="file.js"></script>
 	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			transition: all 0.3s;
+		}
+
 		body {
 			background: #121212;
 			font-size: calc(1.5em + 0.1vw);
@@ -33,66 +39,220 @@
 		}
 
 		.head {
-			text-align: center;
+			height: 10%;
+			z-index: 1000;
+			position: fixed;
 			color: red;
+			background: #272727;
+			text-align: center;
+			width: 100%;
+			top: 0;
 		}
+
+		#main {
+			position: relative;
+			transition: all 1s;
+			padding: 100px 0 50px;
+			z-index: 2;
+		}
+
+		#btn {
+			position: absolute;
+			top: 18px;
+			left: 25px;
+			height: 40px;
+			width: 40px;
+		}
+
+
+		li {
+			color: #818181;
+			list-style: none;
+			text-align: justify;
+			text-overflow: ellipsis;
+			padding: 0;
+			margin: 20px 0;
+			font-size: 110%;
+			transition: transform 0.5s;
+		}
+
+		li:hover {
+			transform: scale(1.03);
+		}
+
+		#state {
+			position: absolute;
+			width: 25vw;
+			max-width: 180px;
+			text-align: left;
+			white-space: nowrap;
+			padding-left: 5px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-weight: 600;
+			color: orangered;
+		}
+
+		#state:hover {
+			position: relative;
+			overflow: visible;
+			white-space: normal;
+			height: auto;
+			display: inline-grid;
+		}
+
+		#death {
+			color: goldenrod;
+			font-weight: 600;
+		}
+
+		#recovered {
+			color: #673ab7;
+			font-weight: 600;
+		}
+
+		::-webkit-scrollbar {
+			width: 3vw;
+			max-width: 10px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #777;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background: #555;
+		}
+
+		#sidebar {
+			width: 0;
+			position: fixed;
+			height: 100%;
+			z-index: 1;
+			top: 10%;
+			left: 0;
+			color: #818181;
+			background-color: #363636;
+			overflow-x: hidden;
+			transition: all 0.5s;
+			text-align: center;
+			padding: 0px;
+			text-align: justify;
+		}
+
+		/*
+#sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+#sidebar a:hover{
+  color: #f1f1f1;
+}
+
+#sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}*/
 	</style>
 	<title></title>
+	<script>
+		function show(n) {
+			var side = document.getElementById("sidebar");
+			var main = document.getElementById("main");
+			//alert(side.style.textAlign);
+			if (side.style.width == '0px' && n == true) {
+				side.style.width = "50vw";
+				side.style.maxWidth = "300px";
+				main.style.opacity = '0.5';
+				main.style.cursor = "pointer";
+				side.style.zIndex = "5";
+				side.style.padding = "20px";
+			} else {
+				side.style.width = '0';
+				main.style.opacity = '1';
+				side.style.zIndex = "1";
+				main.style.cursor = "default";
+				side.style.padding = "0";
+			}
+		}
+	</script>
 </head>
 
 <body>
-	<div class="main">
-		<div class="head">
-			<h1>Coronavirus Tracker</h1>
+	<div class="head">
+		<h1>Coronavirus Tracker</h1>
+		<button onclick="show(true);" id="btn">+</button>
+	</div>
+	<div class="container">
+		<div id="sidebar" style="width: 0;">
+			<ul id="list">
+
+			</ul>
 		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-					<div id="total_cases" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid blue;">
+		<div id="main" onclick="show(false);">
 
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div id="total_cases" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid blue;">
+
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-					<div id="total_recovered" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid green;">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div id="total_recovered" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid green;">
 
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-					<div id="total_deaths" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid red;">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div id="total_deaths" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid red;">
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="col-md-12" id="recovery">
-
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="col-md-12" id="fatality">
-
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="col-md-12" id="case">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="col-md-12" id="recovery">
 
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="col-md-12" id="fatality">
+
+						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="col-md-12" id="recover">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="col-md-12" id="case">
 
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="col-md-12" id="recover">
+
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="col-md-12" id="cases_data">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="col-md-12" id="cases_data">
 
+						</div>
 					</div>
 				</div>
 			</div>
