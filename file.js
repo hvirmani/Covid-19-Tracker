@@ -4,7 +4,7 @@ google.load("visualization", "1", {
 google.setOnLoadCallback(drawChart1);
 
 function drawChart1() {
-	var data = google.visualization.arrayToDataTable(arr_1);
+	var data = google.visualization.arrayToDataTable(arr);
 
 	var options = {
 		title: 'Confirmed Cases',
@@ -50,7 +50,7 @@ function drawChart1() {
 google.setOnLoadCallback(drawChart2);
 
 function drawChart2() {
-	var data = google.visualization.arrayToDataTable(arr);
+	var data = google.visualization.arrayToDataTable(arr_1);
 
 	var options = {
 		title: 'Recovered Cases',
@@ -297,3 +297,28 @@ fetch(url)
 		}
 
 	})
+
+function show(n) {
+	var side = document.getElementById("sidebar");
+	var main = document.getElementById("main");
+	//alert(side.style.textAlign);
+	if (side.style.width == "0px" && n == false) {
+
+	} else {
+		document.getElementById("btn").classList.toggle("change");
+	}
+	if (side.style.width == '0px' && n == true) {
+		side.style.width = "50vw";
+		side.style.maxWidth = "300px";
+		main.style.opacity = '0.5';
+		main.style.cursor = "pointer";
+		side.style.zIndex = "5";
+		side.style.padding = "20px";
+	} else {
+		side.style.width = '0';
+		main.style.opacity = '1';
+		side.style.zIndex = "1";
+		main.style.cursor = "default";
+		side.style.padding = "0";
+	}
+}

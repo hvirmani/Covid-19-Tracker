@@ -2,65 +2,91 @@
 <html lang="en">
 
 <head>
-	<!-- mlh devfolio hackerearth-->
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-		}
-
-		#side {
-			width: 0;
-			height: 100%;
-			z-index: 0;
-			position: fixed;
-			top: 0;
-			left: 0;
-		}
-
-		#main {
-			background: lightgreen;
-			height: 100vh;
-			overflow-x: hidden;
-			width: 100%;
-		}
-		button {
-			width: 100px;
-			
-		}
-		#fix{
-			position: absolute;
-			top: 10px;
-			left: 0;
-		}
-		#b{
-			position: relative;
-			margin-left: 10px;
-		}
-	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<script src="file.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<title>Coronavirus Tracker</title>
 </head>
 
 <body>
-	<div id="side">
-
+	<div class="head">
+		<h1>Coronavirus Tracker</h1>
+		<div class="container" id="btn" onclick="show(true);">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
 	</div>
-	<div id="main">
-		<button onclick="openNav();" id="fix">+</button>
-		<button onclick="closeNav();" id="b">-</button>
-	</div>
-	<script>
-		function openNav() {
-			document.getElementById("side").style.width = "250px";
-			document.getElementById("main").style.marginLeft = "250px";
-		}
+	<div class="container">
+		<div id="sidebar" style="width: 0;">
+			<ul id="list">
 
-		function closeNav() {
-			document.getElementById("side").style.width = "0";
-			document.getElementById("main").style.marginLeft = "0";
-		}
-	</script>
+			</ul>
+		</div>
+		<div id="main" onclick="show(false);">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div id="total_cases" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid blue;animation: fadeInLeft 1s;">
+
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div id="total_recovered" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid green;animation: fadeIn 1s;">
+
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div id="total_deaths" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid red;animation: fadeInRight 1s;">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="col-md-12" id="recovery" style="animation: fadeInLeft 1.5s ;">
+
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="col-md-12" id="fatality" style="animation: fadeInRight 1.5s;">
+
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="col-md-12" id="case" style="animation: fadeInLeft 1.5s;">
+
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="col-md-12" id="recover" style="animation: fadeInRight 1.5s ;">
+
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="col-md-12" id="cases_data" style="animation: fadeIn 4s ;">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="foot" style="animation: fadeIn 6s ;">
+		Made with❤️by Harshit
+	</div>
 </body>
 
 </html>
