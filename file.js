@@ -293,7 +293,7 @@ fetch(url)
 		for (i = 1; i < 38; i++) {
 			var element = document.createElement("li");
 			document.getElementById("list").appendChild(element);
-			element.innerHTML = `<li>${data.statewise[i].confirmed}<span id="state"> ${data.statewise[i].state}</span><br><span id="death"> Death: </span>${data.statewise[i].deaths}<br><span id="recovered">Recovered: </span>${data.statewise[i].recovered}</li>`;
+			element.innerHTML = `${data.statewise[i].confirmed}<span id="state"> ${data.statewise[i].state}</span><br><span id="death"> Death: </span>${data.statewise[i].deaths}<br><span id="recovered">Recovered: </span>${data.statewise[i].recovered}`;
 		}
 
 	})
