@@ -10,13 +10,15 @@
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 	<script src="file.js"></script>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Coronavirus Tracker</title>
 </head>
 
 <body>
 	<div class="head">
-		<h1>Coronavirus Tracker</h1>
-		<div class="container" id="btn" onclick="show(true);">
+		<h1 data-aos="fade-up" data-aos-duration="500">Coronavirus Tracker</h1>
+		<div class="container" id="btn" onclick="show(true);" data-aos="fade-down" data-aos-duration="500">
 			<div class="bar1"></div>
 			<div class="bar2"></div>
 			<div class="bar3"></div>
@@ -32,18 +34,18 @@
 
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-						<div id="total_cases" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid blue;animation: fadeInLeft 1s;">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-duration="500">
+						<div id="total_cases" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid blue;">
 
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-						<div id="total_recovered" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid green;animation: fadeIn 1s;">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-duration="500">
+						<div id="total_recovered" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid green;">
 
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-						<div id="total_deaths" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid red;animation: fadeInRight 1s;">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-duration="500">
+						<div id="total_deaths" class="col-md-12" style="padding:2%;font-size:calc(1em + 0.5vw);margin:2% auto;text-align:center;background:#1e1e1e;border-left:4px solid red;">
 
 						</div>
 					</div>
@@ -52,31 +54,31 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="col-md-12" id="recovery" style="animation: fadeInLeft 1.5s ;">
+						<div class="col-md-12" id="recovery" data-aos="fade-down-left" data-aos-duration="500">
 
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="col-md-12" id="fatality" style="animation: fadeInRight 1.5s;">
+						<div class="col-md-12" id="fatality" data-aos="fade-down-right" data-aos-duration="500">
 
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<div class="col-md-12" id="case" style="animation: fadeInLeft 1.5s;">
+						<div class="col-md-12" id="case" data-aos="fade-down-left" data-aos-duration="500">
 
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="col-md-12" id="recover" style="animation: fadeInRight 1.5s ;">
+						<div class="col-md-12" id="recover" data-aos="fade-down-right" data-aos-duration="500">
 
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<div class="col-md-12" id="cases_data" style="animation: fadeIn 4s ;">
+						<div class="col-md-12" id="cases_data" data-aos="fade-up" data-aos-duration="500">
 
 						</div>
 					</div>
@@ -84,9 +86,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="foot" style="animation: fadeIn 6s ;">
-		Made with❤️by Harshit
+	<div class="footer_area" id="footer">
+		<div class="media_icon" data-aos="fade-up" data-aos-duration="1000">
+
+			<a href="https://www.instagram.com/hvirmani/" id="instagram"><i class="fa fa-instagram"></i></a>
+			<a href="" id="twitter"><i class="fa fa-twitter"></i></a>
+			<a href="https://github.com/hvirmani" id="github"><i class="fa fa-github"></i></a>
+			<a href="" id="outlook"><i class="fa fa-envelope"></i></a>
+			<a href="https://www.linkedin.com/in/harshit-virmani-53a32b197" id="linkedin"><i class="fa fa-linkedin-square"></i></a>
+		</div>
+		<div class="credits">
+			<p style="text-align: center;">Designed with❤️by <a id="me" href="https://github.com/hvirmani">Harshit</a></p>
+		</div>
 	</div>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 </body>
 
 </html>
