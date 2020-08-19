@@ -217,7 +217,10 @@ function drawChart5() {
 			},
 			gridlines: {
 				color: 'transparent'
-			}
+			},
+			 viewWindow: {
+              min:20000
+            }
 		},
 		backgroundColor: {
 			fill: '#1e1e1e'
