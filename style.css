@@ -30,7 +30,7 @@ body {
 }
 
 .head {
-	height: 10%;
+	height: auto;
 	min-height: 80px;
 	z-index: 1000;
 	position: fixed;
