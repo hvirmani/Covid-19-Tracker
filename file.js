@@ -219,7 +219,7 @@ function drawChart5() {
 				color: 'transparent'
 			},
 			 viewWindow: {
-              min:20000
+              min:0
             }
 		},
 		backgroundColor: {
