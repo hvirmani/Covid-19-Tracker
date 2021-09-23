@@ -252,7 +252,7 @@ var arr = [],
 	k,
 	a, b, c;
 
-const url = "https://api.covid19india.org/data.json";
+const url = "https://data.covid19india.org/data.json";
 fetch(url)
 	.then((res) => {
 		return res.json();
